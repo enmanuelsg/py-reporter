@@ -1,0 +1,14 @@
+data:
+  file_path: 'data/Marketing.csv'
+
+email:
+  sender_email: 'enmanuel.santana@ml4data.com'
+  sender_name: 'Report Bot'
+  recipient_email: 'enmanuel.s@gmail.com'
+  recipient_name: 'Marketing Team'
+  subject: 'Weekly Report v2'
+  # password will be loaded from .env as SENDGRID_API_KEY
+
+report:
+  template_name: 'report_template_gmail.html'
+  title: 'Marketing Spend Analysis'

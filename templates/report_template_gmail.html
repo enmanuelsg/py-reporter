@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Marketing Analytics Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #cccccc;
+            color: #000000;
+        }
+        thead {
+            background-color: #003366;
+            color: #ffffff;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-align: left;
+            color: #000000;
+        }
+        h1, h2 {
+            color: #003366;
+        }
+        p {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" width="100%" cellpadding="20" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table width="600" style="border: 1px solid #ddd; background-color: #fff;">
+                    <tr>
+                        <td style="padding: 20px; background-color: #003366; text-align: center;">
+                            <h1 style="margin: 0; font-size: 22px; color: #f2f2f2;">{{ report_title }}</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; background-color: #f2f2f2;">
+                            <p style="font-size: 14px; text-align: center;">
+                                Report Period<br>
+                                {{ report_period }}
+                            </p>
+
+                            <h2 style="text-align: center;">1. Analysis for Last 5 Days</h2>
+                            <table cellspacing="0" cellpadding="8">
+                                <tr style="background-color: #003366;">
+                                    <th align="left" style="color: #ffffff;">Date</th>
+                                    <th align="left" style="color: #ffffff;">Total Orders</th>
+                                    <th align="left" style="color: #ffffff;">Revenue</th>
+                                </tr>
+                                {% for row in tabla1 %}
+                                <tr>
+                                    <td>{{ row.c_date }}</td>
+                                    <td>{{ row.orders }}</td>
+                                    <td>{{ row.revenue }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                            <h2 style="text-align: center;">2. Campaign Analysis</h2>
+                            <table cellspacing="0" cellpadding="8">
+                                <tr style="background-color: #003366;">
+                                    <th align="left" style="color: #ffffff;">Campaign</th>
+                                    <th align="left" style="color: #ffffff;">Spend</th>
+                                    <th align="left" style="color: #ffffff;">Orders</th>
+                                    <th align="left" style="color: #ffffff;">Revenue</th>
+                                </tr>
+                                {% for row in tabla2 %}
+                                <tr>
+                                    <td>{{ row.campaign_name }}</td>
+                                    <td>{{ row.mark_spent }}</td>
+                                    <td>{{ row.orders }}</td>
+                                    <td>{{ row.revenue }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                            <h2 style="text-align: center;">3. Category Analysis</h2>
+                            <table cellspacing="0" cellpadding="8">
+                                <tr style="background-color: #003366;">
+                                    <th align="left" style="color: #ffffff;">Category</th>
+                                    <th align="left" style="color: #ffffff;">Spend</th>
+                                    <th align="left" style="color: #ffffff;">Orders</th>
+                                    <th align="left" style="color: #ffffff;">Revenue</th>
+                                </tr>
+                                {% for row in tabla3 %}
+                                <tr>
+                                    <td>{{ row.category }}</td>
+                                    <td>{{ row.mark_spent }}</td>
+                                    <td>{{ row.orders }}</td>
+                                    <td>{{ row.revenue }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                            <h2 style="text-align: center;">4. Visualization</h2>
+                            <div style="text-align: center;">
+                                <img src="cid:graph1" width="600" alt="Graph 1" style="max-width: 100%; height: auto;">
+                                <br>
+                                <img src="cid:graph2" width="400" alt="Graph 2" style="max-width: 100%; height: auto;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding: 20px; background-color: #f4f4f4;">
+                            <p style="font-size: 12px; color: #000;">
+                                This is an automated report generated on {{ generation_time }}.<br>
+                                For questions or further assistance, please contact enmanuel.s@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
