@@ -7,8 +7,9 @@ email:
   recipient_email: 'enmanuel.s@gmail.com'
   recipient_name: 'Marketing Team'
   subject: 'Weekly Report v2'
-  # password will be loaded from .env as SENDGRID_API_KEY
 
 report:
+  template_dir: 'templates'
   template_name: 'report_template_gmail.html'
   title: 'Marketing Spend Analysis'
+  output_file: 'final_report.html'
