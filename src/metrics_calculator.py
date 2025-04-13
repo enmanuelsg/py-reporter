@@ -28,7 +28,7 @@ def calculate_tables(df):
     )
 
     return {
-        'tabla1': table1,
-        'tabla2': table2,
-        'tabla3': table3
+        'table1': table1,
+        'table2': table2,
+        'table3': table3
     }

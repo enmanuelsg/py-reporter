@@ -41,9 +41,9 @@ def main():
         report_title=report_conf['title'],
         report_period=f"{df['c_date'].min().date()} to {df['c_date'].max().date()}",
         generation_time=datetime.now().strftime('%Y-%m-%d %H:%M'),
-        tabla1=tables['tabla1'],
-        tabla2=tables['tabla2'],
-        tabla3=tables['tabla3']
+        tabla1=tables['table1'],
+        tabla2=tables['table2'],
+        tabla3=tables['table3']
     )
 
     with output_path.open('w', encoding='utf-8') as f:
