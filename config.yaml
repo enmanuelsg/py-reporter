@@ -2,9 +2,9 @@ data:
   file_path: 'data/Marketing.csv'
 
 email:
-  sender_email: 'enmanuel.santana@ml4data.com'
+  sender_email: 'sender@mail.com'
   sender_name: 'Report Bot'
-  recipient_email: 'enmanuel.s@gmail.com'
+  recipient_email: 'recipient@mail.com'
   recipient_name: 'Marketing Team'
   subject: 'Weekly Report v2'
 
