@@ -1,0 +1,81 @@
+<div style="font-family: Arial, sans-serif; color: #000000; background-color: #ffffff; padding: 20px; max-width: 900px; margin: auto;">
+
+    <h1 style="text-align: center; color: #003366;">{{ report_title }}</h1>
+    <p style="text-align: center; font-size: 14px;">Report Period: <strong>{{ report_period }}</strong></p>
+
+    <h2 style="color: #003366; text-align: center;">1. Analysis for Last 5 Days</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+        <thead style="background-color: #003366; color: #ffffff;">
+            <tr>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Date</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Total Orders</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in tabla1 %}
+            <tr>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.c_date }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.orders }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.revenue }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 style="color: #003366;  text-align: center;">2. Campaign Analysis</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+        <thead style="background-color: #003366; color: #ffffff;">
+            <tr>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Campaign</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Spend</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Orders</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in tabla2 %}
+            <tr>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.campaign_name }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.mark_spent }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.orders }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.revenue }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 style="color: #003366;  text-align: center;">3. Category Analysis</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+        <thead style="background-color: #003366; color: #ffffff;">
+            <tr>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Category</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Spend</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Orders</th>
+                <th style="padding: 8px; border: 1px solid #cccccc;">Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in tabla3 %}
+            <tr>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.category }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.mark_spent }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.orders }}</td>
+                <td style="padding: 8px; border: 1px solid #cccccc;">{{ row.revenue }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 style="color: #003366;  text-align: center;">4. Visualizations</h2>
+    <div style="text-align: center;">
+        <img src="{{ graph1_path | safe }}" alt="Graph 1" style="max-width: 100%; height: auto; margin-bottom: 40px;">
+        <img src="{{ graph2_path | safe }}" alt="Graph 2" style="max-width: 100%; height: auto;">
+    </div>
+
+    <p style="text-align: center; font-size: 12px; margin-top: 40px;">
+        This report was generated on {{ generation_time }}.<br>
+        Contact: enmanuel.s@gmail.com
+    </p>
+
+</div>
